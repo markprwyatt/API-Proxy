@@ -3,8 +3,9 @@ const app = express();
 const fetch =  require("node-fetch");
 require("dotenv").config()
 
+const port = process.env.PORT || 3000;
 
-app.listen(3000, () => console.log('listening on 3000'))
+app.listen(port, () => console.log('listening on ' + port))
 app.use(express.static('public'))
 
 app.get('/getAllPages', async (request, response) => {
